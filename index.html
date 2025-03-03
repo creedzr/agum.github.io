@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Ansurance Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <style>
+          
+        .neu-shadow {
+            box-shadow: 8px 8px 15px #a3a3a3, -8px -8px 15px #ffffff;
+        }
+
+        .neu-shadow-inner {
+            box-shadow: inset 5px 5px 10px #a3a3a3, inset -5px -5px 10px #ffffff;
+        }
+
+        .neu-button:active {
+            box-shadow: inset 3px 3px 7px #a3a3a3, inset -3px -3px 7px #ffffff;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #4F46E5, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-slide {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-slide.active {
+            transform: translateX(0);
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-4">
+    <!-- Overlay for mobile menu -->
+    <div id="overlay" class="overlay fixed inset-0 z-40"></div>
+
+    <!-- Header Section -->
+    <header class="max-w-4xl mx-auto p-6 rounded-2xl neu-shadow bg-gray-100 mb-8">
+        <nav class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold gradient-text">Agum Ruswandi</h1>
+
+            <!-- Hamburger Button -->
+            <button id="menuBtn" class="md:hidden px-4 py-2 rounded-xl neu-button bg-gray-100">
+                <i class="fas fa-bars text-indigo-600"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-4">
+                <a href="#home"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-indigo-600 hover:text-indigo-800">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="#projects"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800">
+                    <i class="fas fa-code mr-2"></i>Projects
+                </a>
+                <a href="#contact"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-purple-600 hover:text-purple-800">
+                    <i class="fas fa-envelope mr-2"></i>Contact
+                </a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu"
+                class="menu-slide fixed top-0 left-0 h-full w-64 bg-gray-100 neu-shadow p-6 z-50 md:hidden">
+                <button id="closeBtn" class="absolute top-4 right-4 px-4 py-2 rounded-xl neu-button bg-gray-100">
+                    <i class="fas fa-times text-indigo-600"></i>
+                </button>
+                <div class="flex flex-col space-y-4 mt-12">
+                    <a href="#home"
+                        class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-indigo-600 hover:text-indigo-800">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    <a href="#projects"
+                        class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800">
+                        <i class="fas fa-code mr-2"></i>Projects
+                    </a>
+                    <a href="#contact"
+                        class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-purple-600 hover:text-purple-800">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="max-w-4xl mx-auto p-8 rounded-2xl neu-shadow bg-gray-100 mb-8">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="w-48 h-48 rounded-full overflow-hidden neu-shadow">
+                <img src="images/profile.jpg" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Quality Assurance (QA) Enthusiast</h2>
+                <p class="text-gray-600 mb-6 text-lg">Dedicated to software testing with hands-on experience from Eduwork Bootcamp and personal projects.
+                     Focused on manual and automation web testing,eager to learn, 
+                     and continuously improving skills. Open to new challenges and committed to delivering high-quality software.</p>
+                <div class="flex gap-4">
+                    <a href="cv/cv.pdf" download
+                        class="px-6 py-3 rounded-xl neu-button bg-gray-100 text-indigo-600 hover:text-indigo-800 hover-scale">
+                        <i class="fas fa-download mr-2"></i>Download CV
+                    </a>
+
+                    <button
+                        class="px-6 py-3 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800 hover-scale"
+                        onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+                        <i class="fas fa-user-plus mr-2"></i>Hire Me
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="max-w-4xl mx-auto p-8 rounded-2xl neu-shadow bg-gray-100 mb-8">
+        <h3 class="text-2xl font-bold gradient-text mb-6">Technical Skills</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <!-- Skill 1 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="fas fa-code text-4xl mb-3" style="color: #3498db;"></i>
+                <p class="text-gray-700 font-semibold">JavaScript</p>
+            </div>
+            <!-- Skill 2-->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="fas fa-database text-4xl mb-3" style="color: #2ecc71;"></i>
+                <p class="text-gray-700 font-semibold">MySQL</p>
+            </div>
+           
+            <!-- Skill 3 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/qase.svg" 
+                class="w-12 h-12 mx-auto hover:scale-110 transition">
+                <p class="text-gray-700 font-semibold text-lg">Qase</p>
+            </div>
+            <!-- Skill 4 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="devicon-apache-plain colored text-5xl mb-3"></i>
+                <p class="text-gray-700 font-semibold">Jmeter</p>
+            </div>
+            <!-- Skill 5 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="devicon-postman-plain colored text-5xl mb-3" style="color: #e67e22; "></i>
+                <p class="text-gray-700 font-semibold">Postman</p>
+            </div>
+            <!-- Skill 6 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="fa-brands fa-github text-4xl mb-3" style="color: #1a1919;"></i>
+                <p class="text-gray-700 font-semibold">Github</p>
+            </div>
+            
+            <!-- Skill 7 -->
+            <div class="p-6 rounded-xl neu-shadow text-center hover-scale">
+                <i class="devicon-cypressio-plain colored text-5xl mb-3" style="color: #42b883;"></i>
+                <p class="text-gray-700 font-semibold">Cypress</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-4xl mx-auto p-8 rounded-2xl neu-shadow bg-gray-100 mb-8">
+        <h3 class="text-2xl font-bold gradient-text mb-6">Featured Projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-4 rounded-xl neu-shadow hover-scale">
+                <img src="images/project1.png" alt="Project 1" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-indigo-600 mb-2">Automation Testing(Cypress) - XYZ Bank</h4>
+                <p class="text-gray-600 mb-4">Developed and executed automated functional tests for the Bank XYZ web application using
+                    Cypress, ensuring core banking features work as expected.</p>
+                <a href="https://github.com/creedzr/Project-QA"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800 inline-block">
+                    <i class="fas fa-external-link-alt mr-2"></i>View Project
+                </a>
+            </div>
+            <div class="p-4 rounded-xl neu-shadow hover-scale">
+                <img src="images/project2.png" alt="Project 2" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-indigo-600 mb-2">Manual Testing (Qase.io)-XYZ Bank</h4>
+                <p class="text-gray-600 mb-4">Conducted manual functional testing on the XYZ Bank application to ensure 
+                    core banking features work as expected.</p>
+                <a href="https://drive.google.com/file/d/1REKam9CCm2qJsguo0fQ_qUt6jJyH2TfG/view"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800 inline-block">
+                    <i class="fas fa-external-link-alt mr-2"></i>View Project
+                </a>
+            </div>
+            <div class="p-4 rounded-xl neu-shadow hover-scale">
+                <img src="images/project3.png" alt="Project 2" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-indigo-600 mb-2">Performance Testing (Jmeter) -mangaplus.shueisha.co.jp</h4>
+                <p class="text-gray-600 mb-4">Conducted performance testing on the Mangaplus Shueisha website using JMeter to evaluate server
+                    performance under high load.</p>
+                <a href="https://docs.google.com/document/d/1uuLLpgKMp4P8YlS4REpFf-Ie3awQOe-O/edit?usp=sharing&ouid=112272988065320860824&rtpof=true&sd=true"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800 inline-block">
+                    <i class="fas fa-external-link-alt mr-2"></i>View Project
+                </a>
+            </div>
+            <div class="p-4 rounded-xl neu-shadow hover-scale">
+                <img src="images/project4.png" alt="Project 2" class="rounded-lg mb-4 w-full h-48 object-cover">
+                <h4 class="text-xl font-bold text-indigo-600 mb-2">Manual Testing (Qase.io) -career.djarum.com</h4>
+                <p class="text-gray-600 mb-4">Conducted manual functional testing on the Career Djarum website to ensure core features work as
+                    expected.</p>
+                <a href="https://drive.google.com/file/d/1i3zjVq8tq9DzkdRHM8sfpqow0PQB9r76/view"
+                    class="px-4 py-2 rounded-xl neu-button bg-gray-100 text-pink-600 hover:text-pink-800 inline-block">
+                    <i class="fas fa-external-link-alt mr-2"></i>View Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto p-8 rounded-2xl neu-shadow bg-gray-100">
+        <h3 class="text-2xl font-bold gradient-text mb-6">Let's Connect</h3>
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+                <form class="space-y-4" id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+                    <div>
+                        <input type="text" id="name" placeholder="Your Name"
+                            class="w-full p-4 rounded-xl neu-shadow-inner bg-gray-100 outline-none focus:text-indigo-600"
+                            required>
+                    </div>
+                    <div>
+                        <input type="email" id="email" placeholder="Your Email"
+                            class="w-full p-4 rounded-xl neu-shadow-inner bg-gray-100 outline-none focus:text-indigo-600"
+                            required>
+                    </div>
+                    <div>
+                        <textarea id="message" placeholder="Your Message" rows="4"
+                            class="w-full p-4 rounded-xl neu-shadow-inner bg-gray-100 outline-none focus:text-indigo-600"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="px-6 py-3 rounded-xl neu-button bg-gray-100 text-indigo-600 hover:text-indigo-800 hover-scale">
+                        <i class="fab fa-whatsapp mr-2"></i>Send via WhatsApp
+                    </button>
+                </form>
+            </div>
+            <div class="flex-1 space-y-4">
+                <div class="p-4 rounded-xl neu-shadow">
+                    <i class="fas fa-map-marker-alt text-pink-600 mr-2"></i>
+                    <span class="text-gray-700">Sukabumi, SMI</span>
+                </div>
+                <div class="p-4 rounded-xl neu-shadow">
+                    <i class="fas fa-envelope text-indigo-600 mr-2"></i>
+                    <span class="text-gray-700">agumruswandijobs@gmail.com</span>
+                </div>
+                <div class="flex gap-4 mt-4">
+                    <a href="https://www.linkedin.com/in/agumruswandi/" class="p-4 rounded-xl neu-button bg-gray-100 text-blue-600 hover:text-blue-800 hover-scale">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/creedzr" class="p-4 rounded-xl neu-button bg-gray-100 text-gray-800 hover:text-black hover-scale">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking menu items
+        const menuItems = mobileMenu.getElementsByTagName('a');
+        for (let item of menuItems) {
+            item.addEventListener('click', closeMenu);
+        }
+
+        // Close menu on window resize if screen becomes larger
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                closeMenu();
+            }
+        });
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const text = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            const whatsappURL = `https://wa.me/6281646809168?text=${text}`;
+
+            window.open(whatsappURL, '_blank');
+            document.getElementById('whatsappForm').reset();
+        }
+
+    </script>
+</body>
+
+</html>
